@@ -13,7 +13,7 @@
 import openpyxl
 import os
 if os.path.exists('D:\\rankedRunners\\rankedResults.xlsx'):
-  os.remove('D:\rankedRunners\\rankedResults.xlsx')
+  os.remove('D:\\rankedRunners\\rankedResults.xlsx')
 else:
   print("The file does not exist")
 
