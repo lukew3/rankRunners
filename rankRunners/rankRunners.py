@@ -12,18 +12,18 @@
 
 import openpyxl
 import os
-if os.path.exists('D:\pythonProjects\pythonExcel\\rankedResults.xlsx'):
-  os.remove('D:\pythonProjects\pythonExcel\\rankedResults.xlsx')
+if os.path.exists('D:\\rankedRunners\\rankedResults.xlsx'):
+  os.remove('D:\rankedRunners\\rankedResults.xlsx')
 else:
   print("The file does not exist")
 
-path = "D:\pythonProjects\pythonExcel\meetResultsSheet.xlsx"
+path = "D:\\rankedRunners\meetResultsSheet.xlsx"
 #creates a duplicate sheet
 wb = openpyxl.load_workbook(path)
 sheet = wb.active
 sheet.title = 'old'
 wb.create_sheet(index=1, title='new')
-wb.save('D:\pythonProjects\pythonExcel\\rankedResults.xlsx')
+wb.save('D:\\rankedRunners\\rankedResults.xlsx')
 
 # workbook object is created 
 wb_obj = openpyxl.load_workbook(path) 
@@ -116,4 +116,4 @@ while rank <= 44:
     rowMax = rowMax-1
 
 wb.remove(oldSheet)
-wb.save('D:\pythonProjects\pythonExcel\\rankedResults.xlsx')
+wb.save('D:\\rankedRunners\\rankedResults.xlsx')
