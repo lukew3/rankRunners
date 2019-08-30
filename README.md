@@ -16,8 +16,6 @@ A spreadsheet reader would be beneficial but not needed if you already have a .x
 2. Move the folder named rankedRunners into your D drive
 3. Run the file 
 
-End with an example of getting some data out of the system or using it for a little demo
-
 ## Built With
 
 * Python
