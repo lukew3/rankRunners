@@ -8,6 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
+You must install openpyxl by running the command `pip install openpyxl` in the windows command prompt
 A spreadsheet reader would be beneficial but not needed if you already have a .xlsx file created
 
 ### Installing
