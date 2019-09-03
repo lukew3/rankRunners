@@ -9,24 +9,38 @@
 #       also make a program that doesnt have the individual minutes and seconds cells
 #       fix formatting of pr cell so that times are displayed like 19:09 instead of 19:9
 #       make the program able to read off of the original file without any editing
-
 import openpyxl
+from tkinter import Tk
+from tkinter.filedialog import askopenfilename
+
+#Opens a windows that allows you to pick the file you want to get data from
+Tk().withdraw() # we don't want a full GUI, so keep the root window from appearing
+filename = askopenfilename() # show an "Open" dialog box and return the path to the selected file
+print(filename)
+
+originalPath = filename
+#Subtracts rankedResults.xlsx from the path string
+folderPath = originalPath[:-21]
+print(folderPath)
+rankedPath = folderPath + "rankedResults.xlsx"
+print(rankedPath)
+
+#Removes old rankedResultsShhet.xlsx if it exists
 import os
-if os.path.exists('D:\\rankRunners\\rankedResults.xlsx'):
-  os.remove('D:\\rankRunners\\rankedResults.xlsx')
+if os.path.exists(rankedPath):
+  os.remove(rankedPath)
 else:
   print("The file does not exist")
 
-path = "D:\\rankRunners\meetResultsSheet.xlsx"
 #creates a duplicate sheet
-wb = openpyxl.load_workbook(path)
+wb = openpyxl.load_workbook(originalPath)
 sheet = wb.active
 sheet.title = 'old'
 wb.create_sheet(index=1, title='new')
-wb.save('D:\\rankRunners\\rankedResults.xlsx')
+wb.save(rankedPath)
 
 # workbook object is created 
-wb_obj = openpyxl.load_workbook(path) 
+wb_obj = openpyxl.load_workbook(originalPath) 
 oldSheet = wb['old']
 newSheet = wb['new']
 
@@ -116,4 +130,4 @@ while rank <= 44:
     rowMax = rowMax-1
 
 wb.remove(oldSheet)
-wb.save('D:\\rankRunners\\rankedResults.xlsx')
+wb.save(rankedPath)
