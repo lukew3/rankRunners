@@ -14,7 +14,7 @@ A spreadsheet reader would be beneficial but not needed if you already have a .x
 ### Installing
 
 1. Extract the files from the zip  
-2. Move the folder named rankedRunners into your D drive
+2. Install openpyxl as mentioned in prerequisites
 3. Run the file 
 
 ## Built With
