@@ -30,7 +30,7 @@ import os
 if os.path.exists(rankedPath):
   os.remove(rankedPath)
 else:
-  print("The file does not exist")
+  print("A duplicate file does not exist")
 
 #creates a duplicate sheet
 wb = openpyxl.load_workbook(originalPath)
